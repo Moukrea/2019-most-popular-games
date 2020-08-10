@@ -1,28 +1,28 @@
-<div class="container-xl p-5">
-  <h1 class="text-center mb-5">RAWG's 2019 Most Popular Games</h1>
+<div class="container-xl p-5" [hidden]="showDetailsComponent">
+  <h1 class="text-center mb-5">2019 most popular games</h1>
 
   <div *ngIf="loading" class="d-flex justify-content-between flex-wrap">
     <div
       *ngFor="let item of [].constructor(6); let i = index"
-      class="game-vignette blinking blink-delay-{{ i }} mb-5"
+      class="game-vignette-box blinking blink-delay-{{ i }} mb-5"
     ></div>
     <div
       *ngFor="let item of [].constructor(6); let i = index"
-      class="game-vignette blinking blink-delay-{{ i }} mb-5"
+      class="game-vignette-box blinking blink-delay-{{ i }} mb-5"
     ></div>
     <div
       *ngFor="let item of [].constructor(6); let i = index"
-      class="game-vignette blinking blink-delay-{{ i }} mb-5"
+      class="game-vignette-box blinking blink-delay-{{ i }} mb-5"
     ></div>
     <div
       *ngFor="let item of [].constructor(6); let i = index"
-      class="game-vignette blinking blink-delay-{{ i }} mb-5"
+      class="game-vignette-box blinking blink-delay-{{ i }} mb-5"
     ></div>
   </div>
 
   <div *ngIf="!loading" class="d-flex justify-content-between flex-wrap">
     <div *ngFor="let g of games" class="game-vignette-box mb-5">
-      <div class="game-vignette" routerLink="/games/{{ g.id }}">
+      <div class="game-vignette" (click)="showGameDetails(g.id)">
         <div class="game-vignette-container">
           <ng-container *ngIf="!g.background_image">
             <h3 class="game-vignette-title-no-img">{{ g.name }}</h3>
@@ -70,3 +70,9 @@
     </li>
   </ul>
 </div>
+
+<app-game-details
+  [gameId]="gameId"
+  [hidden]="!showDetailsComponent"
+  (displayChange)="changeDisplayState()"
+></app-game-details>

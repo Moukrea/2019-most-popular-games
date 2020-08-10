@@ -1,13 +1,18 @@
 {
-  "name": "rawg",
-  "version": "0.0.0",
+  "name": "com.moukrea.mostpopulargames",
+  "displayName": "2019 most popular games",
+  "version": "1.0.0",
+  "description": "A simple app showing 2019 most popular games according to RAWG.",
+  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "electron-build": "ng build --prod",
+    "electron": "electron ."
   },
   "private": true,
   "dependencies": {
@@ -27,10 +32,12 @@
     "@angular-devkit/build-angular": "~0.901.7",
     "@angular/cli": "~9.1.7",
     "@angular/compiler-cli": "~9.1.9",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "electron": "^9.2.0",
+    "electron-packager": "^15.0.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~5.0.0",
@@ -41,6 +48,21 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "cordova-android": "^9.0.0",
+    "cordova-plugin-whitelist": "^1.3.4"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Emeric Commenge (Moukrea)",
+  "license": "Apache-2.0",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {}
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }
