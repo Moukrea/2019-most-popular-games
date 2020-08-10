@@ -1,0 +1,72 @@
+<div class="container-xl p-5">
+  <h1 class="text-center mb-5">RAWG's 2019 Most Popular Games</h1>
+
+  <div *ngIf="loading" class="d-flex justify-content-between flex-wrap">
+    <div
+      *ngFor="let item of [].constructor(6); let i = index"
+      class="game-vignette blinking blink-delay-{{ i }} mb-5"
+    ></div>
+    <div
+      *ngFor="let item of [].constructor(6); let i = index"
+      class="game-vignette blinking blink-delay-{{ i }} mb-5"
+    ></div>
+    <div
+      *ngFor="let item of [].constructor(6); let i = index"
+      class="game-vignette blinking blink-delay-{{ i }} mb-5"
+    ></div>
+    <div
+      *ngFor="let item of [].constructor(6); let i = index"
+      class="game-vignette blinking blink-delay-{{ i }} mb-5"
+    ></div>
+  </div>
+
+  <div *ngIf="!loading" class="d-flex justify-content-between flex-wrap">
+    <div *ngFor="let g of games" class="game-vignette-box mb-5">
+      <div class="game-vignette" routerLink="/games/{{ g.id }}">
+        <div class="game-vignette-container">
+          <ng-container *ngIf="!g.background_image">
+            <h3 class="game-vignette-title-no-img">{{ g.name }}</h3>
+          </ng-container>
+          <ng-container *ngIf="g.background_image">
+            <img class="game-vignette-fanart" src="{{ g.background_image }}" />
+          </ng-container>
+          <div class="game-vignette-chart">#{{ g.chart }}</div>
+          <div class="game-vignette-genre">
+            <span
+              *ngFor="let genre of g.genres"
+              class="badge badge-dark mr-1"
+              >{{ genre }}</span
+            >
+          </div>
+        </div>
+        <p class="lead text-center game-vignette-title">{{ g.name }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ul *ngIf="!loading" class="pagination justify-content-center">
+    <li *ngIf="currentPage > 2" class="page-item">
+      <button class="page-link" (click)="getGamePage(1)">
+        &laquo;
+      </button>
+    </li>
+    <li class="page-item disabled" [class.disabled]="currentPage === 1">
+      <button class="page-link" (click)="getGamePage(previousPage)">
+        Previous page
+      </button>
+    </li>
+    <li class="page-item">
+      <button class="page-link">
+        {{ currentPage }}
+      </button>
+    </li>
+    <li
+      class="page-item"
+      [class.disabled]="nextPage === null || nextPage > 500"
+    >
+      <button class="page-link" (click)="getGamePage(nextPage)">
+        Next page
+      </button>
+    </li>
+  </ul>
+</div>

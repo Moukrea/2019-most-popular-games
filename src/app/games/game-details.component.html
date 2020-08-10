@@ -1,0 +1,79 @@
+<div class="loading-center" *ngIf="gameLoading">
+  <div class="loading-loader">
+    <div class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p class="lead text-center">Please wait</p>
+  </div>
+</div>
+
+<ng-container *ngIf="!gameLoading">
+  <div *ngIf="game.background_image" class="game-page-background">
+    <img src="{{ game.background_image }}" />
+  </div>
+</ng-container>
+
+<div class="game-page-bottom">
+  <ng-container *ngIf="!gameLoading">
+    <div class="game-page-top">
+      <div class="game-page-desc">
+        <h1 class="mb-5">
+          {{ game.name }}
+        </h1>
+        <ul class="list-group list-group">
+          <li class="list-group-item bg-transparent">
+            <strong>Ratings:</strong> Metacritic ({{ game.metacritic }}/100) |
+            Average ({{ game.rating }}/5)
+          </li>
+          <li class="list-group-item bg-transparent">
+            <strong>Release Date:</strong>
+            {{ game.released | date: "dd/MM/yyyy" }}
+          </li>
+          <li class="list-group-item bg-transparent">
+            <strong>Original title:</strong> {{ game.name }}
+          </li>
+          <li class="list-group-item bg-transparent">
+            <strong>Genres:</strong>
+            <span
+              *ngFor="let genre of game.genres"
+              class="badge badge-dark ml-2"
+              >{{ genre }}</span
+            >
+          </li>
+          <li class="list-group-item bg-transparent">
+            <strong>Platforms:</strong
+            ><span
+              *ngFor="let platform of game.metacritic_platforms"
+              class="badge badge-dark ml-2"
+              >{{ platform }}</span
+            >
+          </li>
+          <li class="list-group-item bg-transparent">
+            <strong>Developed by:</strong
+            ><span
+              *ngFor="let developer of game.developers"
+              class="badge badge-dark ml-2"
+              >{{ developer }}</span
+            >
+          </li>
+        </ul>
+
+        <p class="lead mt-5">{{ game.description }}</p>
+      </div>
+      <div class="game-page-screenshot-section">
+        <img
+          *ngIf="game.background_image"
+          src="{{ game.background_image }}"
+          class="game-page-screenshot"
+        />
+      </div>
+    </div>
+  </ng-container>
+</div>

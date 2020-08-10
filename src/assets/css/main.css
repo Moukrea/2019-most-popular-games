@@ -1,0 +1,284 @@
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.loading-center {
+  width: 100%;
+  height: 80vh;
+}
+
+.loading-center .loading-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blinking {
+  color: transparent;
+  animation: blink 2s linear infinite;
+}
+@keyframes blink {
+  0% {
+    background-color: rgba(40, 41, 62, 0);
+  }
+  25% {
+    background-color: rgba(40, 41, 62, 0.25);
+  }
+  50% {
+    background-color: rgba(40, 41, 62, 0.5);
+  }
+  75% {
+    background-color: rgba(40, 41, 62, 0.25);
+  }
+  100% {
+    background-color: rgba(40, 41, 62, 0);
+  }
+}
+
+.blink-delay-0 {
+  animation-delay: 0s;
+}
+.blink-delay-1 {
+  animation-delay: 0.3s;
+}
+.blink-delay-2 {
+  animation-delay: 0.6s;
+}
+.blink-delay-3 {
+  animation-delay: 0.9s;
+}
+.blink-delay-4 {
+  animation-delay: 1.2s;
+}
+.blink-delay-5 {
+  animation-delay: 1.2s;
+}
+.blink-delay-6 {
+  animation-delay: 1.2s;
+}
+
+.game-page-top {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+.game-page-bottom {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.game-page-desc {
+  display: inline-block;
+  padding: 3rem;
+  width: 50%;
+  min-height: 600px;
+}
+
+.game-page-logo {
+  max-width: 600px;
+}
+
+.game-page-screenshot-section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.game-page-screenshot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 50%;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.game-page-background {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  min-width: 100%;
+  height: 100%;
+  z-index: -1000;
+}
+
+.game-page-background img {
+  opacity: 0.15;
+  object-fit: cover;
+  width: 100%;
+  filter: blur(5px);
+}
+
+.game-vignette-box {
+  margin: auto;
+  width: 370px;
+  height: 220px;
+}
+
+.game-vignette {
+  margin: 0 10px 0 10px;
+  cursor: pointer;
+  width: 350px;
+  height: 220px;
+  transition: 0.1s ease-out;
+}
+
+.game-vignette:hover {
+  transform: scale(1.1);
+}
+
+.game-vignette:hover .game-vignette-title {
+  opacity: 1;
+}
+
+.game-vignette-container {
+  position: relative;
+  background-color: rgba(61, 14, 59, 0.2);
+  width: 350px;
+  height: 197px;
+  overflow: hidden;
+}
+
+.game-vignette-title-no-img {
+  position: absolute;
+  cursor: pointer;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 70%;
+  text-shadow: black 1px 1px 10px;
+  z-index: 10;
+}
+
+.game-vignette-fanart {
+  max-width: 100%;
+}
+
+.game-vignette-title {
+  text-shadow: black 1px 1px 10px;
+  opacity: 1;
+  transition: 0.2s ease-in;
+}
+
+.game-vignette-chart {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 2rem;
+  text-shadow: 1px 1px 10px #000;
+  z-index: 10;
+}
+
+.game-vignette-genre {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  z-index: 10;
+}
+
+/* CSS LOADER */
+
+.lds-roller {
+  margin: auto;
+  display: block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
