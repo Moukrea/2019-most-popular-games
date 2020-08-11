@@ -1,9 +1,7 @@
 {
-  "name": "com.moukrea.mostpopulargames",
-  "displayName": "2019 most popular games",
-  "version": "1.0.0",
-  "description": "A simple app showing 2019 most popular games according to RAWG.",
-  "main": "index.js",
+  "name": "2019-most-popular-games",
+  "version": "0.0.0",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -48,21 +46,6 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3",
-    "cordova-android": "^9.0.0",
-    "cordova-plugin-whitelist": "^1.3.4"
-  },
-  "keywords": [
-    "ecosystem:cordova"
-  ],
-  "author": "Emeric Commenge (Moukrea)",
-  "license": "Apache-2.0",
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-whitelist": {}
-    },
-    "platforms": [
-      "android"
-    ]
+    "typescript": "~3.8.3"
   }
 }
