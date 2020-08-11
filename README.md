@@ -1,6 +1,6 @@
 # 2019 most popular games
 
-A very simple app that show 2019's most popular games according to RAWG API.  
+A very simple app that shows 2019's most popular games according to RAWG API.  
 It was made in less than 4 hours with Angular as a personnal challenge, then has been slightly altered to work as a Desktop app using Electron.
 
 • Windows ARM release is untested, x86 release has only been tested on x64 hardware.  
