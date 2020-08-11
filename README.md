@@ -5,7 +5,9 @@ It was made in less than 4 hours with Angular as a personnal challenge, then has
 
 • Windows ARM release is untested, x86 release has only been tested on x64 hardware.  
 • Linux releases are untested (x64, x86, ARM, ARM64).  
-• MacOS has been removed (not working, has it was built from a Windows machine).
+• MacOS has been removed (not working, has it was built from a Windows machine).  
+
+This is app won't ever receive updates as it serves no real purposes.
 
 ## If you clone the repo
 
