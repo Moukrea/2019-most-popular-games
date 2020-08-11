@@ -9,7 +9,7 @@ It was made in less than 4 hours with Angular as a personnal challenge, then has
 
 ## If you clone the repo
 
-Run `ng serve` to start the server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm install` to get dependecies, then run `ng serve` to start the server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## If you download a release
 
